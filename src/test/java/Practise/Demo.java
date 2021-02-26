@@ -7,7 +7,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-import com.crm.clarisoft.v1.ObjectRepository.HomePage;
 import com.crm.clarisoft.v1.ObjectRepository.Login;
 import com.crm.clarisoft.v1.ObjectRepository.Logout;
 import com.crm.clarisoft.v1.genericLib.FileDataUtility;
@@ -42,6 +41,8 @@ public class Demo {
 		login.loginToApp(userName, password);
 		
 		//Logout From the Application
+		Logout logout = new Logout(driver);
+		logout.logoutFromApp(driver);
 		
 	}
 }

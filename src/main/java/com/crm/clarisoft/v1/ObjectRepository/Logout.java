@@ -5,9 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.crm.clarisoft.v1.genericLib.WebDriverUtilities;
+
 public class Logout {
 	
-	Logout(WebDriver driver){
+	public Logout(WebDriver driver){
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -25,5 +27,9 @@ public class Logout {
 		return logout;
 	}
 	
-	
+	public void logoutFromApp(WebDriver driver) {
+		WebDriverUtilities wutil=new WebDriverUtilities();
+		wutil.mouseOverToElement(driver, getMouseover());
+		getLogout().click();
+	}
 }
